@@ -57,6 +57,38 @@
       });
     }
 
+    // Acessibilidade do submenu via teclado: Enter/Espaço alterna aria-expanded
+    document.querySelectorAll('.menu-item > a').forEach((trigger) => {
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          trigger.setAttribute('aria-expanded', String(!expanded));
+        }
+      });
+    });
+
+    // Alto contraste
+    const html = document.documentElement;
+    const contrastBtn = document.querySelector('.contrast-toggle');
+    const storedContrast = localStorage.getItem('contrast');
+    if (storedContrast === 'high') {
+      html.setAttribute('data-contrast', 'high');
+      contrastBtn?.setAttribute('aria-pressed', 'true');
+    }
+    contrastBtn?.addEventListener('click', () => {
+      const isHigh = html.getAttribute('data-contrast') === 'high';
+      if (isHigh) {
+        html.removeAttribute('data-contrast');
+        localStorage.removeItem('contrast');
+        contrastBtn.setAttribute('aria-pressed', 'false');
+      } else {
+        html.setAttribute('data-contrast', 'high');
+        localStorage.setItem('contrast', 'high');
+        contrastBtn.setAttribute('aria-pressed', 'true');
+      }
+    });
+
     applyMask(document.querySelector("#cpf"), maskCPF);
     applyMask(document.querySelector("#telefone"), maskPhone);
     applyMask(document.querySelector("#cep"), maskCEP);
