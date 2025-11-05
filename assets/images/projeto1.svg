@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Ilustração de projeto social">
+  <rect width="640" height="360" fill="#12181a"/>
+  <rect x="16" y="16" width="608" height="328" rx="12" fill="#0b0f10" stroke="#2a3439"/>
+  <g fill="#3ddc97">
+    <circle cx="90" cy="90" r="24"/>
+    <circle cx="160" cy="120" r="16"/>
+    <circle cx="120" cy="160" r="12"/>
+  </g>
+  <g stroke="#2a3439" fill="none">
+    <path d="M220 120 h340"/>
+    <path d="M220 150 h280"/>
+    <path d="M220 180 h320"/>
+  </g>
+</svg>
+

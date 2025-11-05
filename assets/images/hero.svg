@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Capa ilustrativa">
+  <defs>
+    <radialGradient id="r" cx="0.2" cy="-0.1" r="1">
+      <stop offset="0" stop-color="#3ddc97" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#3ddc97" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="600" fill="#12181a"/>
+  <circle cx="200" cy="-60" r="400" fill="url(#r)"/>
+  <circle cx="1000" cy="-120" r="380" fill="url(#r)"/>
+  <g fill="none" stroke="#2a3439" opacity="0.6">
+    <path d="M0 520 C 200 480, 400 560, 600 520 S 1000 480, 1200 520"/>
+    <path d="M0 560 C 240 520, 400 600, 640 560 S 1040 520, 1200 560"/>
+  </g>
+  <g fill="#3ddc97">
+    <circle cx="180" cy="440" r="6"/>
+    <circle cx="980" cy="420" r="5"/>
+    <circle cx="760" cy="500" r="4"/>
+  </g>
+</svg>
+

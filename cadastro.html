@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro — Voluntários e Doadores | ONG Cruzeiro do Sul</title>
+    <meta name="description" content="Cadastre-se como voluntário ou doador. Formulário com validação nativa e máscaras para CPF, telefone e CEP.">
+    <meta property="og:title" content="Cadastro — Voluntários e Doadores | ONG Cruzeiro do Sul">
+    <meta property="og:description" content="Participe do nosso impacto. Leva menos de 2 minutos.">
+    <link rel="canonical" href="cadastro.html">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header>
+      <div class="container nav" role="navigation" aria-label="Principal">
+        <a class="brand" href="index.html">
+          <img src="assets/images/logo.svg" width="32" height="32" alt="Logo da ONG">
+          <span>ONG Cruzeiro do Sul</span>
+        </a>
+        <nav class="menu" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="cadastro.html" aria-current="page">Cadastro</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" class="container" tabindex="-1">
+      <section aria-labelledby="titulo">
+        <h1 id="titulo">Cadastro</h1>
+        <p class="lead">Preencha seus dados para se voluntariar, doar ou receber novidades. Todos os campos marcados com * são obrigatórios.</p>
+      </section>
+
+      <section aria-labelledby="formulario">
+        <h2 id="formulario" class="sr-only">Formulário</h2>
+        <form action="#" method="post" novalidate="false">
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <div class="row cols-2">
+              <div class="field">
+                <label for="nome">Nome completo *</label>
+                <input id="nome" name="nome" type="text" required autocomplete="name" placeholder="Ex.: Maria da Silva" minlength="3" />
+              </div>
+              <div class="field">
+                <label for="nascimento">Data de nascimento *</label>
+                <input id="nascimento" name="nascimento" type="date" required autocomplete="bday" />
+              </div>
+            </div>
+
+            <div class="row cols-3">
+              <div class="field">
+                <label for="cpf">CPF *</label>
+                <input id="cpf" name="cpf" type="text" inputmode="numeric" required placeholder="000.000.000-00"
+                  pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" title="Formato: 000.000.000-00" maxlength="14" />
+                <small class="hint">Somente números — a máscara será aplicada automaticamente.</small>
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone *</label>
+                <input id="telefone" name="telefone" type="tel" inputmode="tel" required placeholder="(00) 00000-0000"
+                  pattern="^\(\d{2}\)\s?\d{4,5}-\d{4}$" title="Formato: (00) 00000-0000" maxlength="15" />
+              </div>
+              <div class="field">
+                <label for="email">E-mail *</label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="voce@exemplo.com" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Endereço</legend>
+            <div class="row cols-3">
+              <div class="field">
+                <label for="cep">CEP *</label>
+                <input id="cep" name="cep" type="text" inputmode="numeric" required placeholder="00000-000"
+                  pattern="^\d{5}-\d{3}$" title="Formato: 00000-000" maxlength="9" autocomplete="postal-code" />
+              </div>
+              <div class="field">
+                <label for="estado">Estado *</label>
+                <select id="estado" name="estado" required autocomplete="address-level1">
+                  <option value="" disabled selected>Selecione...</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
+                  <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
+                  <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
+                  <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
+                  <option>SE</option><option>TO</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cidade">Cidade *</label>
+                <input id="cidade" name="cidade" type="text" required autocomplete="address-level2" placeholder="Sua cidade" />
+              </div>
+            </div>
+
+            <div class="row cols-2">
+              <div class="field">
+                <label for="endereco">Endereço *</label>
+                <input id="endereco" name="endereco" type="text" required autocomplete="address-line1" placeholder="Rua, número e complemento" />
+              </div>
+              <div class="field">
+                <label for="bairro">Bairro</label>
+                <input id="bairro" name="bairro" type="text" autocomplete="address-line2" placeholder="Bairro" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Interesse</legend>
+            <div class="row cols-3">
+              <div class="field">
+                <label for="papel">Quero me cadastrar como *</label>
+                <select id="papel" name="papel" required>
+                  <option value="" disabled selected>Selecione...</option>
+                  <option value="voluntario">Voluntário</option>
+                  <option value="doador">Doador</option>
+                  <option value="ambos">Ambos</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="area">Área de interesse</label>
+                <select id="area" name="area">
+                  <option value="educacao">Educação</option>
+                  <option value="saude">Saúde</option>
+                  <option value="inovacao">Inovação</option>
+                  <option value="comunicacao">Comunicação</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="newsletter">Receber newsletter</label>
+                <select id="newsletter" name="newsletter">
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Consentimento</legend>
+            <div class="field">
+              <label>
+                <input type="checkbox" name="termos" required /> Li e concordo com os termos de uso e a política de privacidade *
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button class="btn secondary" type="reset">Limpar</button>
+            <button class="btn" type="submit">Enviar cadastro</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>© <span id="ano"></span> ONG Cruzeiro do Sul — Cadastro</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+
