@@ -1,6 +1,6 @@
 # Plataforma Web para ONGs — ONG Cruzeiro do Sul
 
-Entrega I (HTML5) concluída e Entrega II (CSS3) implementada: design system modular, leiautes responsivos (Grid/Flex), navegação com dropdown e menu hambúrguer, e componentes de interface (cards, botões, formulários com feedback, alerts, toasts e modal).
+Entrega I (HTML5) concluída, Entrega II (CSS3) implementada e Entrega III (JS) adicionada: design system modular, leiautes responsivos (Grid/Flex), navegação com dropdown e menu hambúrguer, componentes de interface (cards, botões, formulários com feedback, alerts, toasts e modal) e SPA básica em JavaScript com templates, validação e armazenamento local.
 
 ## Estrutura de Pastas
 
@@ -17,7 +17,12 @@ projeto ong/
      │  ├─ components.css     # header/nav, hero, cards, botões, formulário, feedback
      │  └─ utilities.css      # utilitários (sr-only, skip-link, espaçamentos)
      ├─ js/
-     │  └─ main.js            # máscaras, menu mobile, toast e modal
+     │  ├─ main.js            # máscaras, menu mobile, toast e modal
+     │  ├─ router.js          # roteador por hash (SPA)
+     │  ├─ templates.js       # templates HTML em strings
+     │  ├─ forms.js           # máscaras e verificação de consistência (CPF, e-mail, tel, CEP, data)
+     │  ├─ storage.js         # rascunho de formulário em localStorage
+     │  └─ app.js             # bootstrap da SPA (montagem e pós-render)
      └─ images/
         ├─ logo.svg
         ├─ hero.svg
@@ -30,12 +35,19 @@ projeto ong/
 - Navegação responsiva: menu principal com submenu dropdown (hover/focus) e menu hambúrguer no mobile.
 - Componentes: cards responsivos, botões com estados hover/focus/active/disabled, formulário com feedback visual (valid/invalid), alerts, toasts e modal.
 
+## Entrega III — Destaques (JavaScript)
+- SPA básica via hash com rotas: `#/`, `#/projetos`, `#/cadastro`.
+- Templates JavaScript para render dinâmico de seções.
+- Verificação de consistência em formulários (CPF com dígitos verificadores, e-mail, telefone, CEP, data plausível) com feedback visual e mensagens ao usuário.
+- Salvamento automático de rascunho do formulário em `localStorage` e restauração ao retornar.
+
 ## Como testar
 1. Abra `index.html` no navegador.
-2. Reduza a largura da janela para ver o menu hambúrguer e clique em “☰ Menu”.
-3. No desktop, passe o mouse (ou use TAB) sobre “Projetos” para abrir o dropdown.
-4. Na seção de Feedback da home, clique em “Mostrar toast” e “Abrir modal de novidades”.
-5. Em `cadastro.html`, valide os estados do formulário e as máscaras (CPF, telefone, CEP).
+2. Teste a SPA: use os links `#/...` (Home, Projetos, Cadastro). O conteúdo do `<main>` é atualizado sem recarregar a página.
+3. Reduza a largura da janela para ver o menu hambúrguer e clique em “☰ Menu”.
+4. No desktop, passe o mouse (ou use TAB) sobre “Projetos” para abrir o dropdown.
+5. Na home, clique em “Mostrar toast” e “Abrir modal de novidades”.
+6. Em `#/cadastro`, digite dados inválidos para ver os avisos; o rascunho é salvo e reaplicado ao voltar.
 
 ## Validação (W3C)
 - Valide os arquivos HTML: https://validator.w3.org/
