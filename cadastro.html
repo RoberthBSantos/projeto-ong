@@ -18,11 +18,24 @@
           <img src="assets/images/logo.svg" width="32" height="32" alt="Logo da ONG">
           <span>ONG Cruzeiro do Sul</span>
         </a>
+        <button class="hamburger" aria-controls="menu-mobile" aria-expanded="false" aria-label="Abrir menu">☰ Menu</button>
         <nav class="menu" aria-label="Navegação">
           <a href="index.html">Início</a>
-          <a href="projetos.html">Projetos</a>
+          <div class="menu-item">
+            <a href="projetos.html" aria-haspopup="true" aria-expanded="false">Projetos</a>
+            <div class="submenu" role="menu" aria-label="Submenu Projetos">
+              <a href="projetos.html#lista-projetos" role="menuitem">Destaques</a>
+              <a href="#" role="menuitem">Doações</a>
+              <a href="#" role="menuitem">Voluntariado</a>
+            </div>
+          </div>
           <a href="cadastro.html" aria-current="page">Cadastro</a>
         </nav>
+      </div>
+      <div id="menu-mobile" class="container mobile-menu" hidden>
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="cadastro.html" aria-current="page">Cadastro</a>
       </div>
     </header>
 

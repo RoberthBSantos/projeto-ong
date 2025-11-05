@@ -21,11 +21,26 @@
           <img src="assets/images/logo.svg" width="32" height="32" alt="Logo da ONG">
           <span>ONG Cruzeiro do Sul</span>
         </a>
+        <button class="hamburger" aria-controls="menu-mobile" aria-expanded="false" aria-label="Abrir menu">
+          ☰ Menu
+        </button>
         <nav class="menu" aria-label="Navegação">
           <a href="index.html" aria-current="page">Início</a>
-          <a href="projetos.html">Projetos</a>
+          <div class="menu-item">
+            <a href="projetos.html" aria-haspopup="true" aria-expanded="false">Projetos</a>
+            <div class="submenu" role="menu" aria-label="Submenu Projetos">
+              <a href="projetos.html#lista-projetos" role="menuitem">Destaques</a>
+              <a href="#" role="menuitem">Doações</a>
+              <a href="#" role="menuitem">Voluntariado</a>
+            </div>
+          </div>
           <a href="cadastro.html">Cadastro</a>
         </nav>
+      </div>
+      <div id="menu-mobile" class="container mobile-menu" hidden>
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="cadastro.html">Cadastro</a>
       </div>
     </header>
 
@@ -69,6 +84,15 @@
           <a href="#" aria-label="LinkedIn da ONG (abre em nova aba)" rel="noopener">LinkedIn</a>
         </p>
       </section>
+
+      <section aria-labelledby="feedback">
+        <h2 id="feedback" class="sr-only">Feedback</h2>
+        <div class="alert" role="status">Aviso: inscrições abertas para novos voluntários este mês.</div>
+        <div class="mt-16">
+          <button class="btn secondary" data-open-modal="#modal-news">Abrir modal de novidades</button>
+          <button class="btn" data-toast>Mostrar toast</button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -79,6 +103,19 @@
 
     <script src="assets/js/main.js" defer></script>
     <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+    <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <div class="modal-backdrop" id="modal-news" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Novidades</h3>
+          <button class="btn secondary" data-close-modal>Fechar</button>
+        </div>
+        <p>Transparência: novo relatório trimestral disponível.</p>
+        <div class="modal-actions">
+          <button class="btn" data-close-modal>Ok</button>
+        </div>
+      </div>
+    </div>
   </body>
   </html>
 

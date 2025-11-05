@@ -46,6 +46,17 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Menu hamburger
+    const burger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('menu-mobile');
+    if (burger && mobileMenu) {
+      burger.addEventListener('click', () => {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.hidden = expanded;
+      });
+    }
+
     applyMask(document.querySelector("#cpf"), maskCPF);
     applyMask(document.querySelector("#telefone"), maskPhone);
     applyMask(document.querySelector("#cep"), maskCEP);
@@ -56,6 +67,39 @@
       const main = document.querySelector('main');
       if (main) main.setAttribute('tabindex', '-1');
       main?.focus();
+    });
+
+    // Toasts
+    const toastContainer = document.querySelector('.toast-container');
+    document.querySelectorAll('[data-toast]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = 'Ação concluída com sucesso!';
+        toastContainer.appendChild(toast);
+        setTimeout(() => { toast.remove(); }, 3000);
+      });
+    });
+
+    // Modal
+    function setModalOpen(modal, open) {
+      if (!modal) return;
+      modal.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (open) modal.querySelector('.modal')?.focus();
+    }
+    document.querySelectorAll('[data-open-modal]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sel = btn.getAttribute('data-open-modal');
+        const modal = document.querySelector(sel);
+        setModalOpen(modal, true);
+      });
+    });
+    document.querySelectorAll('[data-close-modal]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.modal-backdrop');
+        setModalOpen(modal, false);
+      });
     });
   });
 })();
