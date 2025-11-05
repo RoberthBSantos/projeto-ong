@@ -62,6 +62,25 @@ projeto ong/
 - Tags semânticas (`header`, `nav`, `main`, `section`, `article`, `footer`).
 - Link de "Pular para o conteúdo" e foco visível.
 - Contrast ratio adequado; meta tags de SEO e Open Graph.
+- Alto contraste: botão "Alto contraste" no cabeçalho ativa `html[data-contrast="high"]` (persistência em `localStorage`). Navegação por teclado em dropdown (Enter/Espaço alterna `aria-expanded`).
+
+## Entrega IV — Versionamento, Acessibilidade e Deploy
+
+### Versionamento (Git/GitHub)
+- GitFlow sugerido: `main` (prod), `develop` (integração), `feature/*`, `release/*`, `hotfix/*`.
+- Commits semânticos (Conventional Commits): `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `chore:`.
+- Releases com versionamento semântico (SemVer): `vX.Y.Z` e changelog por versão.
+
+### Acessibilidade (WCAG 2.1 AA)
+- Teclado: dropdown acessível por `:focus-within` e tecla Enter/Espaço para alternar `aria-expanded`.
+- Leitores de tela: uso de landmarks e `aria-*` nos componentes (menu, submenu, modal, toasts com `aria-live`).
+- Contraste: tema base escuro com razão ≥ 4.5:1; modo de alto contraste disponível.
+
+### Otimização/Deploy
+- Minificação recomendada: HTML/CSS/JS (pode-se usar ferramentas locais como esbuild/terser/csso). Opcional: gerar pasta `dist/` com arquivos minificados para deploy.
+- Imagens: usar SVG/WEBP otimizados.
+- Deploy sugerido: GitHub Pages (Configurar Pages em `main`/`/root`).
+
 
 ## Imagens
 - SVGs otimizados como placeholders (substitua por fotos reais quando disponível).

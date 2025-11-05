@@ -17,6 +17,7 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(11,15,16,0.8); 
 /* Hamburguer */
 .hamburger { display: inline-flex; background: transparent; border: 1px solid var(--color-border); color: var(--color-text); padding: 8px 10px; border-radius: var(--radius-md); }
 .hamburger[aria-expanded="true"] { border-color: var(--color-primary); }
+.contrast-toggle { display: inline-flex; background: transparent; border: 1px solid var(--color-border); color: var(--color-text); padding: 8px 10px; border-radius: var(--radius-md); }
 .mobile-menu { display: grid; gap: 6px; padding: 8px 0; }
 .mobile-menu a { padding: 10px 12px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); }
 

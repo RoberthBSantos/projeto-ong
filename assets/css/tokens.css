@@ -55,4 +55,16 @@
   --focus-ring: 2px solid var(--color-primary);
 }
 
+/* Alto contraste: aplica quando html[data-contrast="high"] */
+html[data-contrast="high"] {
+  --color-bg: #000;
+  --color-surface: #000;
+  --color-elev-1: #000;
+  --color-text: #ffffff;
+  --color-text-muted: #e6e6e6;
+  --color-border: #ffffff;
+  --color-primary: #00ffff; /* ciano vibrante em fundo preto */
+  --focus-ring: 3px solid #ffff00; /* foco bem visível */
+}
+
 
